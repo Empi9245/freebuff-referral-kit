@@ -18,6 +18,7 @@ campagna, scelte per copertura, qualità e uso reale.
 | Growth | 8 | Referrals, analytics, content strategy, marketing plan, community, influencer, copy-editing, attribution |
 | Workflow | 4 | Brainstorming, writing plans, executing plans, verification |
 | Base | 14 di 106 | Strategia, voce, copy, formati; `social-media-skills/skills`, MIT |
+| AI Avatar | 1 | `reel-avatar-cloner`: clonazione virale con Eva, temporal 4-DOF B-roll, anti-uncanny-eye Flow e doppia ricerca audio TikTok |
 
 Dettaglio, sorgenti, commit e licenze: [skills/THIRD-PARTY.md](skills/THIRD-PARTY.md).
 Catalogo operativo: [skills/README.md](skills/README.md).

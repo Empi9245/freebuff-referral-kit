@@ -94,6 +94,12 @@ Da `obra/superpowers` (60,5k stelle).
 Sono le uniche quattro di Superpowers che servono a una campagna di contenuti; le altre 11
 sono sviluppo software puro.
 
+## AI Video & Avatar Cloning
+
+| Skill | Cosa fa |
+|---|---|
+| `reel-avatar-cloner` | Replica Reel e TikTok virali con l'avatar AI @Eva: rimozione testo UI con ricostruzione temporale 4-DOF (`temporal_4dof`), B-roll laptop reale autentico (mai rigenerato in AI), prompt Google Flow anti-uncanny-eye con Head-Lead e Single-Target Gaze Lock, didascalie italiane size-matched, strategia doppia ricerca audio TikTok (ricerca diretta suono meme + Shazam/forbici) e funnel CTA differenziato IG vs TikTok. |
+
 ## Cosa non è incluso
 
 - `aaaronmiller/create-viral-content`: non ha una licenza, quindi non posso ridistribuirla.
