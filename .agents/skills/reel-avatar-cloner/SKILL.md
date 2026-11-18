@@ -7,7 +7,11 @@ description: >-
   whole-second black-frame MP4 export, Shot Caller v2 1080p split-screen video reference sheet & scene locking)
   with subtle-cut detection, audio stripping, 4-DOF temporal screen reconstruction (zero-contour UI text removal)
   + Telea cleaning, size-matched Italian caption + rounded-pill translation, anti-filter & anti-uncanny-eye
-  prompt generation (Google Flow / Seedance 2.5 / Higgsfield), and final reel assembly.
+  prompt generation (Google Flow / Seedance 2.5 / Higgsfield), VP9 true-alpha 3D pop-out PIP compositing in
+  Remotion, and final multi-platform IG/TikTok assembly.
+metadata:
+  version: 2.0.0
+license: MIT
 ---
 
 # Reel Avatar Cloner
@@ -215,3 +219,22 @@ Create a clean working directory inside the project (e.g. `freebuff-export/<camp
      - **Metodo 1 (Ricerca Diretta Suoni TikTok / Instagram):** Istruisci l'utente a cercare nella scheda **Suoni** dell'app la frase dell'hook (es. `"genio tre desideri"`): il trend della community ha il suono già pre-tagliato e sincronizzato.
      - **Metodo 2 (Brano Ufficiale + Forbici ✂️):** Fornisci il titolo/remix ufficiale identificato da Shazam e il timestamp esatto delle Forbici (es. `00:07.86`) con i drop dei beat, testando `asetrate=48000*1.23` se la traccia TikTok era rallentata/tape-slowed.
    - Draft the **TikTok & Instagram captions** (strictly **NEVER mentioning `Freebuff` or `#freebuff`**, hooking on the meme + `seguici e commenta "promo"` + 3 search hashtags), validate with `ig-human` (`humanize.py --report` -> 0 machine artefacts, 0 structural tells), and remind the user to enable the **AI-generated content** toggle + `ADV` disclosure.
+
+---
+
+## Quality Bar — Self-Check
+
+- **1:1 Visual Concept Match:** Does the remake preserve the original's exact framing mechanics (PIP card rounded corners + **3D hair/head breaking above the top border via VP9 `yuva420p` alpha `.webm`**, chest-up shoulders + hands visible, ink-matched UI typography, no invented orange light-leaks or `< 1s` speaker flashes)?
+- **Credit & Model Discipline:** Were ALL clips generated on **one single model & tier** (`omni-1.2-flash @ 360p`, `~5` credits/clip) after `gflow_batch_ingest.py check`, pausing at mid-batch checkpoints if requested, and fixing bright/washed clips (`"accesi"`) with **0-credit** `gflow_batch_ingest.py grade` (`gamma=1.10`) instead of re-generating?
+- **Organic Human Realism:** Do prompts enforce the 5-Block UGC architecture (15% bun headroom, pores/peach fuzz, asymmetrical daylight, axial forward lean, spatial eye glance toward upper cards, varied female hand choreography per cut, close-mic dry acoustics) and `0.93x–1.06x` piecewise-linear `mapEvaFrame` sync?
+- **Custom Edits & Platform Split:** Are any forbidden brand names scrubbed across spoken voice, captions, browser URL bars, terminal installs, and DM cards? Are both **Instagram (`commenta "PROMO"`)** and **TikTok (`seguici sul profilo e scrivi "PROMO" in DM`)** variants rendered, audited frame-by-frame and by full MP4 playback, and paired with `ig-human`-clean copy?
+
+---
+
+## Edge Cases & Pushback
+
+- **"Una clip Flow è venuta troppo luminosa / accesa, rigeneriamola"** -> Push back and save credits: run `python scripts/gflow_batch_ingest.py grade <clip.mp4> --out <graded.mp4> --gamma 1.10` (`0` crediti) per allineare luminanza LAB e tono pelle prima di spendere un solo credito in rigenerazioni.
+- **"Flow è finito su `status 4` sulla clip finale (`0` crediti addebitati)"** -> Il filtro multilingua blocca sollecitazioni DM/link esplicite (`"ti mando in privato"`, `"in messaggio"`, `"warm closing smile"`). Usa la formula sicura collaudata (`"enthusiastic, relatable creator energy"` + `"Seguici e scrivi promo nei commenti..."` per IG / `"Seguici sul profilo e scrivi promo..."` per TikTok).
+- **"Passa a `veo-fast` o un altro modello per le ultime clip"** -> Rifiuta il cambio modello a metà video: altera pelle, voce, illuminazione e ottica tra una scena e l'altra (e `veo-fast` su Flow web ha vincoli `4–8s` / costi doppi). Mantieni un solo modello coerente per tutto il Reel.
+- **"Il taglio originale dura meno di 2 secondi, fai un boomerang loop per mandarlo in V2V a Flow"** -> Mai: i loop boomerang generano micro-scatti robotici e mani maschili duplicate. Usa **`Ingredients` (solo immagini `eva_con_tshirt.png` + `master_room.png` + `@Voice`)** oppure una presa continua naturale.
+- **"Ritaglia la speaker con un box rettangolare CSS `overflow: hidden`"** -> Mai se nell'originale testa/capelli escono 3D sopra la card PIP: esporta in **VP9 `yuva420p` (`.webm`, `alpha_mode=1`)** tramite `gflow_batch_ingest.py popout-pip` e componi con `<OffthreadVideo transparent />` in Remotion.
